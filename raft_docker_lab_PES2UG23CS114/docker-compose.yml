@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  node1:
+    build: .
+    container_name: node1
+    hostname: node1
+    command: python node.py 1
+    networks:
+      - raftnet
+
+  node2:
+    build: .
+    container_name: node2
+    hostname: node2
+    command: python node.py 2
+    networks:
+      - raftnet
+
+  node3:
+    build: .
+    container_name: node3
+    command: python node.py 3
+    networks:
+      - raftnet
+
+  node4:
+    build: .
+    container_name: node4
+    command: python node.py 4
+    networks:
+      - raftnet
+
+  node5:
+    build: .
+    container_name: node5
+    command: python node.py 5
+    networks:
+      - raftnet
+
+networks:
+  raftnet:
